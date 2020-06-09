@@ -1,0 +1,24 @@
+version: '0.1.0'
+config:
+  testRunner:
+    command: npm run programmatic-test
+    args:
+      filter: --grep
+      tap: --reporter=mocha-tap-reporter
+    setup:
+      commands:
+        - npm install
+    directory: coderoad
+  repo: 
+    uri: https://github.com/beaucarnes/coderoad-tutorial
+    branch: v0.1.0
+  dependencies:
+    - name: node
+      version: '>=10'
+levels:
+  - id: L1
+    steps:
+      - id: L1S1
+        setup:
+          commands:
+            - npm install
