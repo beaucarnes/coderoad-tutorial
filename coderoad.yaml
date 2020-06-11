@@ -1,9 +1,8 @@
 version: '0.1.0'
 config:
   testRunner:
-    command: npm run programmatic-test
+    command: ./node_modules/.bin/mocha
     args:
-      filter: --grep
       tap: --reporter=mocha-tap-reporter
     setup:
       commands:
@@ -20,5 +19,4 @@ levels:
     steps:
       - id: L1S1
         setup:
-          commands:
-            - npm install
+          subtasks: false
